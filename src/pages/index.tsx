@@ -1,11 +1,14 @@
+import Header from 'components/Header'
+import Main from 'assets/styles/main'
+
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <Main>
+      <Header />
       <h1>hello world</h1>
-    </div>
+    </Main>
   )
 }
 
