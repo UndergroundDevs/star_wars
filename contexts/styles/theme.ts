@@ -17,10 +17,7 @@ const myTheme = extendTheme({
     background: '#FCF8F3',
     textTitle: '#3A3A3A',
     textParagraph: '#616161',
-    black: '#000000',
   },
-
-  focusBorderColor: '#B18B5A',
 })
 
 export default myTheme

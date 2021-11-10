@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const HeaderContent = styled.header<{ isOpen: boolean}>`
+export const HeaderContent = styled.header`
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -81,8 +81,7 @@ const HeaderContent = styled.header<{ isOpen: boolean}>`
     justify-content: space-between;
   }
 }
-
-  @media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px) {
     padding: 0 25px;
     height: 75px;
     width: 100%;
@@ -90,37 +89,11 @@ const HeaderContent = styled.header<{ isOpen: boolean}>`
 
     .container-logo {
       width: 222px;
-      height: 60px;
+      height: 48px;
     }
 
     .content-links {
-      width: 60%;
-      z-index: 0;
-      height: calc(100vh - 75px);
-      bottom: 0;
-      left: ${({ isOpen }) => ( isOpen ? '0%' : '-60%' )};
-      position: fixed;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      background-color: var(--primary);
-      transition: left .7s;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 10px 8px;
-    }
-
-    .content-links li {
-      display: flex;
-      justify-content: flex-start;
-      width: 50%;
-      height: 50px;
-    }
-
-    .content-links li a {
-      font-size: 20px;
-    }
-
-    .content-links li button {
-      font-size: 20px;
+      display: none;
     }
 
     .content-social-medias {
@@ -129,40 +102,121 @@ const HeaderContent = styled.header<{ isOpen: boolean}>`
 
     button.button {
       display: flex;
-      z-index: 999;
     }
   }
 
   @media screen and (max-width: 767px) {
-    .content-links li {
-      justify-content: flex-start;
-      width: 90%;
-    }
-
-    .content-links li a {
-      font-size: 16px;
-    }
-
-    .content-links li button {
-      font-size: 16px;
+    .container-logo {
+      width: 170px;
+      height: 36px;
     }
   }
 
   @media screen and (max-width: 424px) {
-    padding: 0 15px;
+    padding: 0 10px;
 
-    .container-logo {
-      width: 192px;
-      height: 41px;
-    }
-  }
-
-  @media screen and (max-width: 374px) {
     .container-logo {
       width: 122px;
       height: 26px;
     }
   }
+
+  @media screen and (max-width: 374px) {
+  }
 `;
 
-export default HeaderContent
+export const HeaderMobile = styled.aside<{ isOpen: boolean}>`
+  display: none;
+
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  }
+
+  @media screen and (max-width: 1023px) {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary);
+    width: 60%;
+    height: 100vh;
+    left: ${({ isOpen }) => ( isOpen ? '0%' : '-62%' )};
+    color: var(--text-title);
+    transition: left .7s;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .my-header {
+      padding: 0 25px;
+      height: 75px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .my-header a {
+      display: block;
+      width: 222px;
+      height: 48px;
+    }
+
+    ul.content-links {
+      padding: 50px 0 0 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style: none;
+      font-size: 20px;
+    }
+
+    ul.content-links li {
+      width: 80%;
+      height: 50px;
+    }
+
+    ul.content-links li button {
+      font-size: 20px;
+    }
+
+    ul.content-links li a {
+      padding: 0 10px;
+    }
+
+    ul.content-social-medias {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0 10%;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .my-header a {
+      width: 170px;
+      height: 36px;
+    }
+
+    ul.content-links {
+      font-size: 16px;
+    }
+
+    ul.content-links li button {
+      font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 424px) {
+    .my-header a {
+      width: 122px;
+      height: 26px;
+    }
+  }
+
+  @media screen and (max-width: 374px) {
+    ul.content-links {
+      font-size: 13px;
+    }
+
+    ul.content-links li button {
+      font-size: 13px;
+    }
+  }
+`
