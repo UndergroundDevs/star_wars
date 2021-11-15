@@ -7,6 +7,7 @@ import { SectionAboout } from 'assets/styles/sectionAbou'
 import { SectionHome } from 'assets/styles/sectionHome'
 import { SectionPlannedFurniture } from 'assets/styles/section-planned-furniture'
 import { SectionOurCreativeProcess } from 'assets/styles/our-creative-process'
+import { SectionContact } from 'assets/styles/section-contact'
 
 const Home: NextPage = () => {
   return (
@@ -180,6 +181,24 @@ const Home: NextPage = () => {
           </ul>
         </div>
       </SectionOurCreativeProcess>
+      <SectionContact>
+        <div>
+          <h1>Deseja nos <br /> contatar?</h1>
+          <p>
+            Basta preencher o formúlario ao <br />
+            lado com seus <br /> 
+            dados e nos enviar!
+          </p>
+        </div>
+        <form>
+          <input type="text" name="name" id="name" placeholder="Insira seu nome aqui!" />
+          <input type="email" name="email" id="email" placeholder="Insita seu email aqui!" />
+          <input type="text" name="adress" id="adress" placeholder="Endereço" />
+          <span>Informe seu enderço em caso de agendamento</span>
+          <textarea name="message" id="message" cols={30} rows={10} placeholder=" Insira sua mensagem aqui!"></textarea>
+          <button>Enviar</button>
+        </form>
+      </SectionContact>
     </Main>
   )
 }
