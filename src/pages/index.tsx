@@ -5,6 +5,8 @@ import Image from 'next/image'
 import type { NextPage } from 'next'
 import { SectionAboout } from 'assets/styles/sectionAbou'
 import { SectionHome } from 'assets/styles/sectionHome'
+import { SectionPlannedFurniture } from 'assets/styles/section-planned-furniture'
+import { SectionOurCreativeProcess } from 'assets/styles/our-creative-process'
 
 const Home: NextPage = () => {
   return (
@@ -77,6 +79,107 @@ const Home: NextPage = () => {
           </li>
         </ul>
       </SectionAboout>
+      <SectionPlannedFurniture>
+        <div className="container-picture">
+          <Image
+            src="/image-10.webp"
+            alt=""
+            width="931" height="584" layout="responsive" objectFit="cover"
+          />
+        </div>
+        <aside>
+          <h1>
+            Móveis Planejados
+          </h1>
+          <p>
+            Nossos móveis planejados trazem inspiração e modernidade para o seu lar.
+            Além de serem produtos com um design elegante trazeremos a praticidade
+            para o seu dia a dia, já que  nossos móveis contribuem para o melhor
+            aproveitamento do seu espaço, já que todas as peças são sob medida.
+          </p>
+        </aside>
+      </SectionPlannedFurniture>
+      <SectionOurCreativeProcess>
+        <div className="content-our-creative-process">
+          <h1>Conheça nosso <br /> trabalho</h1>
+          <p>
+            Entenda como funcionar
+            <br />
+            nosso processo criativo!
+          </p>
+          <a href="http://google.com" target="_blank" rel="noopener noreferrer">
+            Toque aqui
+          </a>
+        </div>
+        <div className="content-lets-start">
+          <h1>Nosso processo criativo</h1>
+          <h2>Como vamos começar?</h2>
+          <ul>
+            <li>
+              <div className="container-icon" >
+                <Image
+                  src="/Vector.webp"
+                  alt="Englosh 101 mentoria"
+                  layout="responsive"
+                  width={20}
+                  height={20}
+                />
+              </div>
+              <span>
+                Vamos tirar todas as medidas do seu imovel.
+                <br />
+                <span>
+                  Para isso basta agendar uma visita!
+                </span>
+              </span>
+            </li>
+            <li>
+              <div className="container-icon" >
+                <Image
+                  src="/Vector-_1_.webp"
+                  alt="Englosh 101 mentoria"
+                  layout="responsive"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <span>
+                vamos apresentar 
+                todo o projeto para aprovação
+              </span>
+            </li>
+            <li>
+              <div className="container-icon" >
+                <Image
+                  src="/carbon_delivery-add.webp"
+                  alt="Englosh 101 mentoria"
+                  layout="responsive"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <span>
+                Faremos a entrega em tempo recorde
+                para que você não fique parado
+              </span>
+            </li>
+            <li>
+              <div className="container-icon" >
+                <Image
+                  src="/whh_screwdriver.webp"
+                  alt="Englosh 101 mentoria"
+                  layout="responsive"
+                  width={60}
+                  height={60}
+                />
+              </div>
+              <span>
+                Faremos a montagaem dos seus móveis em tempo recorde!
+              </span>
+            </li>
+          </ul>
+        </div>
+      </SectionOurCreativeProcess>
     </Main>
   )
 }

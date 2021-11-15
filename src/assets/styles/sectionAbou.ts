@@ -32,6 +32,7 @@ export const SectionAboout = styled.section`
     font-weight: normal;
     font-size: 18px;
     line-height: 150%;
+    color: var(--text-title);
   }
 
   ul li span p {
