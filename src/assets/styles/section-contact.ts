@@ -155,10 +155,4 @@ export const SectionContact = styled.section`
       height: 560px !important;
     }
   }
-
-  @media screen and (max-width: 424px) {
-  }
-
-  @media screen and (max-width: 374px) {
-  }
 `;

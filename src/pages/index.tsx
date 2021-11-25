@@ -8,6 +8,8 @@ import { SectionHome } from 'assets/styles/sectionHome'
 import { SectionPlannedFurniture } from 'assets/styles/section-planned-furniture'
 import { SectionOurCreativeProcess } from 'assets/styles/our-creative-process'
 import { SectionContact } from 'assets/styles/section-contact'
+import { SectionPortifolio } from 'assets/styles/portfolio'
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 
 const Home: NextPage = () => {
   return (
@@ -199,6 +201,71 @@ const Home: NextPage = () => {
           <button>Enviar</button>
         </form>
       </SectionContact>
+      <SectionPortifolio>
+        <h1>Portifólio</h1>
+        <p>Conheça alguns de nossos trabalhos</p>
+        <div className="container-tabs">
+          <Tabs size="lg" align="center" borderColor="transparent" colorScheme="#616161" className="content-portifolio">
+            <TabList color="red">
+              <Tab color="#3A3A3A" className="title" >Quarto</Tab>
+              <Tab color="#3A3A3A" className="title" >Sala</Tab>
+              <Tab color="#3A3A3A" className="title" >Cozinha</Tab>
+              <Tab color="#3A3A3A" className="title" >Banheiro</Tab>
+              <Tab color="#3A3A3A" className="title" >Paineis - MDF</Tab>
+              <Tab color="#3A3A3A" className="title" >Escritório</Tab>
+            </TabList>
+
+            <TabPanels width="100%" height="100%">
+              <TabPanel display="flex" width="100%" height="100%" alignItems="center">
+                <div className="container-grid">
+                  <div className="photo-grid">
+                    <div className="card-1">
+                      <img src="/img/Rectangle-38.webp" alt="example" />
+                    </div>
+                    <div className="card-2">
+                      <img src="/img/Rectangle-44.webp" alt="example" />
+                    </div>
+                    <div className="card-3">
+                      <img src="/img/Rectangle-46.webp" alt="example" />
+                    </div>
+                    <div className="card-4">
+                      <img src="/img/Rectangle-36.webp" alt="example" />
+                    </div>
+                    <div className="card-5">
+                      <img src="/img/Rectangle-43.webp" alt="example" />
+                    </div>
+                    <div className="card-6">
+                      <img src="/img/Rectangle-37.webp" alt="example" />
+                    </div>
+                    <div className="card-7">
+                      <img src="/img/Rectangle-40.webp" alt="example" />
+                    </div>
+                    <div className="card-8">
+                      <img src="/img/Rectangle-41.webp" alt="example" />
+                    </div>
+                  </div>
+                </div>
+              </TabPanel>
+              <TabPanel>
+                <p>Sala!</p>
+              </TabPanel>
+              <TabPanel>
+                <p>Cozinha!</p>
+              </TabPanel>
+              <TabPanel>
+                <p>Banheiro!</p>
+              </TabPanel>
+              <TabPanel>
+                <p>Paineis - MDF!</p>
+              </TabPanel>
+              <TabPanel>
+                <p>Escritório!</p>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+        </div>
+
+      </SectionPortifolio>
     </Main>
   )
 }
