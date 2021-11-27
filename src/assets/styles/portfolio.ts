@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const SectionPortifolio = styled.section`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 95px);
   padding: 20px 20px;
 
   h1 {
@@ -146,27 +145,38 @@ export const SectionPortifolio = styled.section`
   }
 
   @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    padding: 10px 20px;
+
+    h1 {
+      font-size: 30px;
+      line-height: 120%;
+    }
+
     p {
       margin-bottom: 0px;
+      font-size: 16px;
     }
 
     .container-grid {
-      max-width: 1000px;
-      width: 1000px;
+      width: 90vw;
       height: 100%;
       overflow-x: scroll;
       overflow-y: hidden;
-      padding: 2rem;
+      padding: 0 2rem 0 2rem;
+    }
+
+    .container-grid::-webkit-scrollbar {
+      display: none;
     }
 
     .container-grid .photo-grid {
       display: grid;
       height: 100%;
-      padding: 0 20px 0 120px;
+      padding: 0 20px 0 150px;
       justify-content: center;
       grid-template-columns: 200px 200px 200px 200px 200px;
       grid-template-rows: 150px 150px 150px;
-      gap: 15px;
+      gap: 10px;
     }
   }
 
@@ -178,6 +188,11 @@ export const SectionPortifolio = styled.section`
       overflow-y: hidden;
       height: 100%;
       padding: 2rem;
+    }
+
+    .container-grid .photo-grid {
+      width: 950px;
+      padding: 0 20px 0 100px;
     }
   }
 

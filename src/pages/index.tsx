@@ -10,6 +10,7 @@ import { SectionOurCreativeProcess } from 'assets/styles/our-creative-process'
 import { SectionContact } from 'assets/styles/section-contact'
 import { SectionPortifolio } from 'assets/styles/portfolio'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
+import { ComminSoon } from 'assets/styles/comingSoon'
 
 const Home: NextPage = () => {
   return (
@@ -264,8 +265,18 @@ const Home: NextPage = () => {
             </TabPanels>
           </Tabs>
         </div>
-
       </SectionPortifolio>
+      <ComminSoon>
+        <h1>Em breve</h1>
+        <div className="content-commin-soon">
+          <Image
+            src="/img/Rectangle-39.webp"
+            alt="Mesa com jarro de flores e uma câmera em  cima"
+            width="839px"
+            height="507px"
+          />
+        </div>
+      </ComminSoon>
     </Main>
   )
 }
