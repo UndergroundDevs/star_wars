@@ -14,7 +14,7 @@ export const HeaderContent = styled.header`
 
   .container-logo {
     width: 270px;
-    height: 50px;
+    height: 58px;
     display: block;
   }
 

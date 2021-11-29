@@ -61,6 +61,9 @@ export const ComminSoon = styled.section`
   }
 
   @media screen and (max-width: 424px) {
+    .content-commin-soon {
+      width: 370px;
+    }
   }
 
   @media screen and (max-width: 374px) {

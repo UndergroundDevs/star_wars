@@ -146,7 +146,7 @@ export const SectionPortifolio = styled.section`
 
   @media screen and (min-width: 1024px) and (max-width: 1439px) {
     padding: 10px 20px;
-
+    
     h1 {
       font-size: 30px;
       line-height: 120%;
@@ -162,6 +162,8 @@ export const SectionPortifolio = styled.section`
       height: 100%;
       overflow-x: scroll;
       overflow-y: hidden;
+      display: flex;
+      justify-content: center;
       padding: 0 2rem 0 2rem;
     }
 
@@ -170,10 +172,10 @@ export const SectionPortifolio = styled.section`
     }
 
     .container-grid .photo-grid {
+      justify-content: flex-end !important;
       display: grid;
       height: 100%;
-      padding: 0 20px 0 150px;
-      justify-content: center;
+      padding: 0;
       grid-template-columns: 200px 200px 200px 200px 200px;
       grid-template-rows: 150px 150px 150px;
       gap: 10px;

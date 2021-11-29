@@ -11,6 +11,7 @@ import { SectionContact } from 'assets/styles/section-contact'
 import { SectionPortifolio } from 'assets/styles/portfolio'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 import { ComminSoon } from 'assets/styles/comingSoon'
+import Footer from 'components/Footer'
 
 const Home: NextPage = () => {
   return (
@@ -217,7 +218,7 @@ const Home: NextPage = () => {
             </TabList>
 
             <TabPanels width="100%" height="100%">
-              <TabPanel display="flex" width="100%" height="100%" alignItems="center">
+              <TabPanel display="flex" width="100%" height="100%" alignItems="center" padding="10px 0 10px 0">
                 <div className="container-grid">
                   <div className="photo-grid">
                     <div className="card-1">
@@ -277,6 +278,7 @@ const Home: NextPage = () => {
           />
         </div>
       </ComminSoon>
+      <Footer />
     </Main>
   )
 }
