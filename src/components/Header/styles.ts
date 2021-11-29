@@ -6,7 +6,7 @@ export const HeaderContent = styled.header`
   position: fixed;
   display: flex;
   padding: 0 100px;
-  height: 95px;
+  height: 75px;
   width: 100%;
   background-color: var(--primary);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

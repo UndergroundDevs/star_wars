@@ -4,6 +4,8 @@ export const SectionPortifolio = styled.section`
   display: flex;
   flex-direction: column;
   padding: 20px 20px;
+  height: calc(100vh - 75px);
+  justify-content: center;
 
   h1 {
     text-align: center;
@@ -32,7 +34,6 @@ export const SectionPortifolio = styled.section`
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 100%;
   }
 
   .container-grid {
@@ -44,7 +45,7 @@ export const SectionPortifolio = styled.section`
 
   .container-grid .photo-grid {
     display: grid;
-    height: 100%;
+    height: auto;
     justify-content: center;
   	grid-template-columns: 200px 200px 200px 200px 200px;
 	  grid-template-rows: 150px 150px 150px;

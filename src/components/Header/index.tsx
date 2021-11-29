@@ -1,5 +1,5 @@
 import { HeaderContent, HeaderMobile } from './styles'
-import { useState } from 'react'
+import { useState, MouseEvent } from 'react'
 import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { Button, IconButton } from '@chakra-ui/button'
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const Header = () => {
-  const [ isOpen, setIsOpen ] = useState(false)
+  const [ isOpen, setIsOpen ] = useState(false);
 
   const openMenu : React.MouseEventHandler<HTMLButtonElement> = (event) => {
     event.preventDefault()
@@ -17,6 +17,19 @@ const Header = () => {
     } else {
       setIsOpen(false)
     }
+  }
+
+  function onScroll(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault()
+    const section = event.currentTarget.getAttribute('href');
+    if (!section)
+      return;
+    
+    const sectionElement = document.querySelector(section);
+    if (!sectionElement)
+      return;
+
+    sectionElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
 
   return (
@@ -115,12 +128,12 @@ const Header = () => {
             </Menu>
           </li>
           <li>
-            <a href="">
+            <a href="#portifolio" onClick={onScroll}>
               Portifólios
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#contact" onClick={onScroll}>
               Contato
             </a>
           </li>
@@ -243,12 +256,12 @@ const Header = () => {
             </Menu>
           </li>
           <li>
-            <a href="">
+            <a href="#portifolio">
               Portifólios
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#contact" onClick={onScroll}>
               Contato
             </a>
           </li>

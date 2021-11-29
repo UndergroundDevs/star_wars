@@ -185,7 +185,7 @@ const Home: NextPage = () => {
           </ul>
         </div>
       </SectionOurCreativeProcess>
-      <SectionContact>
+      <SectionContact id="contact">
         <div>
           <h1>Deseja nos <br /> contatar?</h1>
           <p>
@@ -203,7 +203,7 @@ const Home: NextPage = () => {
           <button>Enviar</button>
         </form>
       </SectionContact>
-      <SectionPortifolio>
+      <SectionPortifolio id="portifolio">
         <h1>Portifólio</h1>
         <p>Conheça alguns de nossos trabalhos</p>
         <div className="container-tabs">

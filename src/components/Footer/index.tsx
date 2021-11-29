@@ -1,5 +1,6 @@
 import { Instagram, FacebookSquare } from '@styled-icons/boxicons-logos'
 import { Telephone, Heart } from '@styled-icons/foundation'
+import { Map } from '@styled-icons/boxicons-solid'
 import { FooterComponent } from './styles'
 
 import Link from 'next/link'
@@ -73,9 +74,10 @@ const Footer = () => {
                   <h1>Contato</h1>
                 </li>
                 <li>
-                  Brasília - DF
+                  <Map size="20px" color="#898989" style={{ marginRight: '15px' }} /> Brasília - DF
                 </li>
                 <li>
+                  <Telephone size="20px" color="#898989" style={{ marginRight: '15px' }} />
                   <a href="tel:61999702525">(61) 9 9970-2525</a>
                 </li>
                 <li>
@@ -87,7 +89,7 @@ const Footer = () => {
           <div className="copyright">
             <p>
               Copyright N House Planejados 2021  Feito com 
-              <Heart size="25px" color="#FF0000" style={{ margin: '0 15px' }}/>
+              <Heart size="25px" color="#FF0000" style={{ margin: '0 15px' }} />
               pela &nbsp;
               <a href="http://www.undergrounds.rf.gd/" target="_blank" rel="noopener noreferrer">
                 Underground DEVs
