@@ -1,6 +1,7 @@
 import Header from 'components/Header'
 import Main from 'assets/styles/main'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 
 import type { NextPage } from 'next'
 import { SectionAboout } from 'assets/styles/sectionAbou'
@@ -13,12 +14,32 @@ import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react"
 import { ComminSoon } from 'assets/styles/comingSoon'
 import Footer from 'components/Footer'
 
+const CarouselComponentSSR = dynamic(
+  () => import('../components/Carousel'),
+  { ssr: true }
+)
+
 const Home: NextPage = () => {
   return (
     <Main>
       <Header />
       <SectionHome>
-        <h1>Section Home</h1>
+        <div className="conten-carousel">
+          <CarouselComponentSSR />
+        </div>
+        <div className="content-buget">
+          <h1>
+            Faça seu orçamento!
+          </h1>
+          <p>
+            Agende agora mesmo uma visita,
+            sem qualquer compromisso,
+            para montarmos um orçamento.
+          </p>
+          <a href="#">
+            Agendar visita
+          </a>
+        </div>
       </SectionHome>
       <SectionAboout>
         <ul>

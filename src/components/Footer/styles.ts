@@ -124,5 +124,8 @@ export const FooterComponent = styled.footer`
   }
 
   @media screen and (max-width: 374px) {
+    .content-footer nav a.home-logo {
+      width: 220px;
+    }
   }
 `

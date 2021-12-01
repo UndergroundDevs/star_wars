@@ -256,7 +256,7 @@ const Header = () => {
             </Menu>
           </li>
           <li>
-            <a href="#portifolio">
+            <a href="#portifolio" onClick={onScroll}>
               Portifólios
             </a>
           </li>

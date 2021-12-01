@@ -10,7 +10,7 @@ export const HeaderContent = styled.header`
   width: 100%;
   background-color: var(--primary);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  z-index: 2;
+  z-index: 2000;
 
   .container-logo {
     width: 270px;

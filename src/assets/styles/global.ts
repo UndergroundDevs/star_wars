@@ -17,10 +17,11 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     font-size: 62.5%;
+    height: auto;
   }
 
   html, body, #__next {
-    height: 100%;
+    height: auto;
     min-height: 100vh;
   }
 
