@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 export const SectionContact = styled.section`
   width: 100%;
-  height: calc(100vh - 95px);
+  height: calc(100vh - 75px);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 30px 10px 30px;
   background-color: var(--background);
 
@@ -37,10 +38,11 @@ export const SectionContact = styled.section`
   }
 
   form {
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 54px;
+    padding: 44px;
     background-color: #FFFFFF;
     border: 1px solid rgba(34, 52, 61, 0.2);
     border-radius: 5px;
@@ -52,6 +54,7 @@ export const SectionContact = styled.section`
     background: #F5F5F5;
     border: 1px solid #E8E8E8;
     box-sizing: border-box;
+    font-size: 14px;
     border-radius: 5px;
     padding: 0 20px;
   }
@@ -61,7 +64,7 @@ export const SectionContact = styled.section`
     font-family: ABeeZee;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 16px;
     letter-spacing: 0.1px;
     color: #22343D;
@@ -81,6 +84,7 @@ export const SectionContact = styled.section`
     padding: 23px 20px;
     width: auto;
     height: 193px;
+    font-size: 14px;
     background: #F5F5F5;
     border: 1px solid #E8E8E8;
     box-sizing: border-box;
@@ -100,9 +104,6 @@ export const SectionContact = styled.section`
     font-size: 16px;
     line-height: 16px;
     letter-spacing: 0.2px;
-  }
-
-  @media screen and (min-width: 1024px) and (max-width: 1439px) {
   }
 
   @media screen and (max-width: 1023px) {

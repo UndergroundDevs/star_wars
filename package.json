@@ -16,14 +16,18 @@
     "@styled-icons/boxicons-logos": "^10.38.0",
     "@styled-icons/boxicons-solid": "^10.38.0",
     "@styled-icons/foundation": "^10.34.0",
+    "axios": "^0.24.0",
     "framer-motion": "^4",
     "next": "11.1.2",
+    "nodemailer": "^6.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "styled-components": "^5.3.3",
-    "swiper": "^7.3.1"
+    "swiper": "^7.3.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.4",
     "@types/react": "17.0.32",
     "@types/styled-components": "^5.1.15",
     "eslint": "8.1.0",
