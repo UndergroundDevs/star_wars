@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -8,10 +8,10 @@ import "swiper/css/navigation"
 
 
 import SwiperCore, {
-  Pagination,Navigation
+  Pagination,Navigation, Autoplay
 } from 'swiper';
 
-SwiperCore.use([Pagination,Navigation]);
+SwiperCore.use([Pagination,Navigation, Autoplay]);
 
 export default function App() {
   return (
@@ -20,6 +20,10 @@ export default function App() {
         loop
         pagination={{ "type": "bullets" }} 
         navigation={true}
+        autoplay={{
+          "delay": 5000,
+          "disableOnInteraction": true,
+        }}
         className="mySwiper"
       >
         <SwiperSlide className="container-image">

@@ -20,6 +20,7 @@ import {
   Tab,
   TabPanel,
   useToast,
+  Spinner
 } from '@chakra-ui/react'
 import { ComminSoon } from 'assets/styles/comingSoon'
 import { formValidation } from '../assets/yup/sendEmail';
@@ -43,6 +44,7 @@ const Home: NextPage = () => {
     address: "",
     message: "",
   });
+  const [ loading, setLoading ] = useState(false);
   const toast = useToast()
 
   function handleInput(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -52,11 +54,13 @@ const Home: NextPage = () => {
 
   async function sendEmail(event: MouseEvent<HTMLButtonElement>) {
     event.preventDefault();
-    
+    setLoading(true);
     try {
       await formValidation.validate(formData, { abortEarly: false })
     } catch (error: any) {
+      setLoading(false)
       const messageError = error.errors as string[];
+      console.log(messageError)
       messageError.forEach((item) => {
         toast({
           title: `Error: ${item}`,
@@ -65,24 +69,34 @@ const Home: NextPage = () => {
           duration: 5000,
         })
       })
+
+      return;
     }
 
-    axios.post(`http://localhost:3000/api/sendEmail`, formData)
-      .then((res) => {
-        toast({
-          title: 'E-mail enviado',
-          status: 'success',
-          isClosable: true,
-          duration: 5000,
-        })
-      }).catch((err) => {
-        toast({
-          title: 'Houve um erro interno, estamos consertando',
-          status: 'warning',
-          isClosable: true,
-          duration: 5000,
-        })
+    try {
+      await axios.post(`http://localhost:3000/api/sendEmail`, formData);
+      setLoading(false)
+      
+      toast({
+        title: 'E-mail enviado',
+        status: 'success',
+        isClosable: true,
+        duration: 5000,
       })
+
+      return;
+    } catch (error) {
+      setLoading(false)
+
+      toast({
+        title: 'Houve um erro interno, estamos consertando',
+        status: 'warning',
+        isClosable: true,
+        duration: 5000,
+      })
+
+      return;
+    }
   }
 
   return (
@@ -395,6 +409,13 @@ const Home: NextPage = () => {
           </div>
         </ComminSoon>
         <Footer />
+        {
+          loading === true ? (
+            <div className="loading">
+              <Spinner color="#B18B5A" size="xl" />
+            </div>
+          ) : null
+        }          
       </Main>
     </>
   )
