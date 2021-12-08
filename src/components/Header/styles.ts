@@ -19,7 +19,7 @@ export const HeaderContent = styled.header`
   }
 
   .content-links {
-    width: 40%;
+    width: 30%;
     height: 100%;
     display: flex;
     flex-direction: row;

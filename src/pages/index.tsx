@@ -5,7 +5,7 @@ import Footer from 'components/Footer'
 import dynamic from 'next/dynamic'
 import axios from 'axios'
 
-import { useState, ChangeEvent, MouseEvent } from 'react'
+import { useState, ChangeEvent, MouseEvent, useEffect } from 'react'
 import type { NextPage } from 'next'
 import { SectionAboout } from 'assets/styles/sectionAbou'
 import { SectionHome } from 'assets/styles/sectionHome'
@@ -45,6 +45,7 @@ const Home: NextPage = () => {
     message: "",
   });
   const [ loading, setLoading ] = useState(false);
+  const [ index, setIndex ] = useState(2);
   const toast = useToast()
 
   function handleInput(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -60,7 +61,6 @@ const Home: NextPage = () => {
     } catch (error: any) {
       setLoading(false)
       const messageError = error.errors as string[];
-      console.log(messageError)
       messageError.forEach((item) => {
         toast({
           title: `Error: ${item}`,
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Main>
-        <Header />
+        <Header index={(event: number) => { setIndex(event); console.log(event) }} />
         <SectionHome>
           <div className="conten-carousel">
             <CarouselComponentSSR />
@@ -337,7 +337,14 @@ const Home: NextPage = () => {
           <h1>Portifólio</h1>
           <p>Conheça alguns de nossos trabalhos</p>
           <div className="container-tabs">
-            <Tabs size="lg" align="center" borderColor="transparent" colorScheme="#616161" className="content-portifolio">
+            <Tabs
+              size="lg"
+              align="center"
+              borderColor="transparent"
+              colorScheme="#616161"
+              className="content-portifolio"
+              index={index}
+            >
               <TabList color="red">
                 <Tab color="#3A3A3A" className="title" >Quarto</Tab>
                 <Tab color="#3A3A3A" className="title" >Sala</Tab>

@@ -7,7 +7,7 @@ import { Instagram, FacebookSquare } from '@styled-icons/boxicons-logos'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Header = () => {
+const Header: React.FC<{ index: Function }> = ({ index }) => {
   const [ isOpen, setIsOpen ] = useState(false);
 
   const openMenu : React.MouseEventHandler<HTMLButtonElement> = (event) => {
@@ -17,6 +17,17 @@ const Header = () => {
     } else {
       setIsOpen(false)
     }
+  }
+
+  function onScrollTab(event: MouseEvent<HTMLButtonElement>, index2: number) {
+    event.preventDefault()
+    const sectionElement = document.querySelector('#portifolio');
+
+    if (!sectionElement)
+      return;
+
+    index(index2);
+    sectionElement?.scrollIntoView({ behavior: 'smooth', block: 'end' });
   }
 
   function onScroll(event: MouseEvent<HTMLAnchorElement>) {
@@ -56,73 +67,19 @@ const Header = () => {
                 Móveis Planejados
               </MenuButton>
               <MenuList>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Quarto</a>
-                  </Link>
+                <MenuItem onClick={(event) => { onScrollTab(event, 0) }}>
+                  Quarto
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">
-                    <a>Sala</a>
-                  </Link>
+                    <a href="" >Sala</a>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">
-                    <a>Cozinha</a>
-                  </Link>
+                    <a href="" >Cozinha</a>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">
-                    <a>Área de Serviço</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>
+                    <a href="" >
                       Banheiro
                     </a>
-                  </Link>
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </li>
-          <li>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rightIcon={<ChevronDownIcon />}
-                background="transparent"
-                transition="all 0.2s"
-              >
-                Modelos
-              </MenuButton>
-              <MenuList>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Quarto</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Sala</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Cozinha</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Área de Serviço</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>
-                      Banheiro
-                    </a>
-                  </Link>
                 </MenuItem>
               </MenuList>
             </Menu>
@@ -185,72 +142,18 @@ const Header = () => {
               </MenuButton>
               <MenuList>
                 <MenuItem>
-                  <Link href="/">
-                    <a>Quarto</a>
-                  </Link>
+                  <a href="">Quarto</a>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">
-                    <a>Sala</a>
-                  </Link>
+                  <a href="">Sala</a>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">
-                    <a>Cozinha</a>
-                  </Link>
+                  <a href="">Cozinha</a>
                 </MenuItem>
                 <MenuItem>
-                  <Link href="/">
-                    <a>Área de Serviço</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>
-                      Banheiro
-                    </a>
-                  </Link>
-                </MenuItem>
-              </MenuList>
-            </Menu>
-          </li>
-          <li>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rightIcon={<ChevronDownIcon />}
-                background="transparent"
-                transition="all 0.2s"
-              >
-                Modelos
-              </MenuButton>
-              <MenuList>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Quarto</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Sala</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Cozinha</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>Área de Serviço</a>
-                  </Link>
-                </MenuItem>
-                <MenuItem>
-                  <Link href="/">
-                    <a>
-                      Banheiro
-                    </a>
-                  </Link>
+                  <a href="">
+                    Banheiro
+                  </a>
                 </MenuItem>
               </MenuList>
             </Menu>
