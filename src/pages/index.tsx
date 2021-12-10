@@ -45,7 +45,7 @@ const Home: NextPage = () => {
     message: "",
   });
   const [ loading, setLoading ] = useState(false);
-  const [ index, setIndex ] = useState(2);
+  const [ index, setIndex ] = useState(0);
   const toast = useToast()
 
   function handleInput(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
     <>
       <Main>
         <Header index={(event: number) => { setIndex(event); console.log(event) }} />
-        <SectionHome>
+        <SectionHome id="home">
           <div className="conten-carousel">
             <CarouselComponentSSR />
           </div>

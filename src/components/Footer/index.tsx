@@ -1,3 +1,4 @@
+import { MouseEvent } from 'react'
 import { Instagram, FacebookSquare } from '@styled-icons/boxicons-logos'
 import { Telephone, Heart } from '@styled-icons/foundation'
 import { Map } from '@styled-icons/boxicons-solid'
@@ -7,12 +8,26 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const Footer = () => {
+
+  function onScroll(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault()
+    const section = event.currentTarget.getAttribute('href');
+    if (!section)
+      return;
+    
+    const sectionElement = document.querySelector(section);
+    if (!sectionElement)
+      return;
+
+    sectionElement.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  }
+
   return (
     <>
       <FooterComponent>
         <div className="content-footer">
           <nav>
-            <a href="" className="home-logo">
+            <a href="#home" className="home-logo" onClick={onScroll}>
               <Image
                 src="/logo-4.webp"
                 alt="N-House Planejados"
@@ -26,25 +41,19 @@ const Footer = () => {
                   <h1>Menu</h1>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a>
+                    <a href="#contact" onClick={onScroll}>
                       Contato
                     </a>
-                  </Link>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a>
-                      Portífolio
-                    </a>
-                  </Link>
+                  <a href="#portifolio" onClick={onScroll}>
+                    Portífolio
+                  </a>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a>
-                      Dicas
-                    </a>
-                  </Link>
+                  <a>
+                    Dicas
+                  </a>
                 </li>
               </ul>
               <ul>

@@ -4,7 +4,6 @@ import { ChevronDownIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { Button, IconButton } from '@chakra-ui/button'
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { Instagram, FacebookSquare } from '@styled-icons/boxicons-logos'
-import Link from 'next/link'
 import Image from 'next/image'
 
 const Header: React.FC<{ index: Function }> = ({ index }) => {
@@ -70,16 +69,14 @@ const Header: React.FC<{ index: Function }> = ({ index }) => {
                 <MenuItem onClick={(event) => { onScrollTab(event, 0) }}>
                   Quarto
                 </MenuItem>
-                <MenuItem>
-                    <a href="" >Sala</a>
+                <MenuItem onClick={(event) => { onScrollTab(event, 1) }}>
+                  Sala
                 </MenuItem>
-                <MenuItem>
-                    <a href="" >Cozinha</a>
+                <MenuItem onClick={(event) => { onScrollTab(event, 2) }}>
+                  Cozinha
                 </MenuItem>
-                <MenuItem>
-                    <a href="" >
-                      Banheiro
-                    </a>
+                <MenuItem onClick={(event) => { onScrollTab(event, 3) }}>
+                  Banheiro
                 </MenuItem>
               </MenuList>
             </Menu>
@@ -141,19 +138,17 @@ const Header: React.FC<{ index: Function }> = ({ index }) => {
                 Móveis Planejados
               </MenuButton>
               <MenuList>
-                <MenuItem>
-                  <a href="">Quarto</a>
+                <MenuItem onClick={(event) => { onScrollTab(event, 0) }}>
+                  Quarto
                 </MenuItem>
-                <MenuItem>
-                  <a href="">Sala</a>
+                <MenuItem onClick={(event) => { onScrollTab(event, 1) }}>
+                  Sala
                 </MenuItem>
-                <MenuItem>
-                  <a href="">Cozinha</a>
+                <MenuItem onClick={(event) => { onScrollTab(event, 2) }}>
+                  Cozinha
                 </MenuItem>
-                <MenuItem>
-                  <a href="">
-                    Banheiro
-                  </a>
+                <MenuItem onClick={(event) => { onScrollTab(event, 3) }}>
+                  Banheiro
                 </MenuItem>
               </MenuList>
             </Menu>
