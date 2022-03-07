@@ -38,14 +38,14 @@ export interface FieldInitalInput {
 }
 
 const Home: NextPage = () => {
-  const [ formData, setFormData ] = useState<FieldInitalInput>({
+  const [formData, setFormData] = useState<FieldInitalInput>({
     name: "",
     email: "",
     address: "",
     message: "",
   });
-  const [ loading, setLoading ] = useState(false);
-  const [ index, setIndex ] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [index, setIndex] = useState(2);
   const toast = useToast()
 
   function handleInput(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -76,7 +76,7 @@ const Home: NextPage = () => {
     try {
       await axios.post(`http://localhost:3000/api/sendEmail`, formData);
       setLoading(false)
-      
+
       toast({
         title: 'E-mail enviado',
         status: 'success',
@@ -102,7 +102,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Main>
-        <Header index={(event: number) => { setIndex(event); console.log(event) }} />
+        <Header index={(event: number) => { setIndex(event) }} />
         <SectionHome id="home">
           <div className="conten-carousel">
             <CarouselComponentSSR />
@@ -188,7 +188,7 @@ const Home: NextPage = () => {
         <SectionPlannedFurniture>
           <div className="container-picture">
             <Image
-              src="/image-10.webp"
+              src="/img/kitchen_cabinet_2.webp"
               alt=""
               width="931" height="584" layout="responsive" objectFit="cover"
             />
@@ -250,7 +250,7 @@ const Home: NextPage = () => {
                   />
                 </div>
                 <span>
-                  vamos apresentar 
+                  vamos apresentar
                   todo o projeto para aprovação
                 </span>
               </li>
@@ -291,7 +291,7 @@ const Home: NextPage = () => {
             <h1>Deseja nos <br /> contatar?</h1>
             <p>
               Basta preencher o formúlario ao <br />
-              lado com seus <br /> 
+              lado com seus <br />
               dados e nos enviar!
             </p>
           </div>
@@ -346,59 +346,92 @@ const Home: NextPage = () => {
               index={index}
             >
               <TabList color="red">
-                <Tab color="#3A3A3A" className="title" >Quarto</Tab>
-                <Tab color="#3A3A3A" className="title" >Sala</Tab>
-                <Tab color="#3A3A3A" className="title" >Cozinha</Tab>
-                <Tab color="#3A3A3A" className="title" >Banheiro</Tab>
-                <Tab color="#3A3A3A" className="title" >Paineis - MDF</Tab>
-                <Tab color="#3A3A3A" className="title" >Escritório</Tab>
+                <Tab color="#3A3A3A" className="title" onClick={() => setIndex(0)}>Quarto</Tab>
+                <Tab color="#3A3A3A" className="title" onClick={() => setIndex(1)}>Sala</Tab>
+                <Tab color="#3A3A3A" className="title" onClick={() => setIndex(2)}>Cozinha</Tab>
+                <Tab color="#3A3A3A" className="title" onClick={() => setIndex(3)}>Banheiro</Tab>
+                <Tab color="#3A3A3A" className="title" onClick={() => setIndex(4)}>Paineis - MDF</Tab>
+                <Tab color="#3A3A3A" className="title" onClick={() => setIndex(5)}>Escritório</Tab>
               </TabList>
 
-              <TabPanels width="100%" height="100%">
+              <TabPanels width="100%" height="100%" >
                 <TabPanel display="flex" width="100%" height="100%" alignItems="center" padding="10px 0 10px 0">
                   <div className="container-grid">
                     <div className="photo-grid">
                       <div className="card-1">
-                        <img src="/img/Rectangle-38.webp" alt="example" />
-                      </div>
-                      <div className="card-2">
-                        <img src="/img/Rectangle-44.webp" alt="example" />
-                      </div>
-                      <div className="card-3">
-                        <img src="/img/Rectangle-46.webp" alt="example" />
+                        <img src="/img/bedroom_closet_2.webp" alt="example" />
                       </div>
                       <div className="card-4">
-                        <img src="/img/Rectangle-36.webp" alt="example" />
+                        <img src="/img/bedroom_closet_1.webp" alt="example" />
                       </div>
                       <div className="card-5">
-                        <img src="/img/Rectangle-43.webp" alt="example" />
+                        <img src="/img/bedroom_shelf_1.webp" alt="example" />
                       </div>
                       <div className="card-6">
-                        <img src="/img/Rectangle-37.webp" alt="example" />
-                      </div>
-                      <div className="card-7">
-                        <img src="/img/Rectangle-40.webp" alt="example" />
-                      </div>
-                      <div className="card-8">
-                        <img src="/img/Rectangle-41.webp" alt="example" />
+                        <img src="/img/nondescript_closet.webp" alt="example" />
                       </div>
                     </div>
                   </div>
                 </TabPanel>
-                <TabPanel>
-                  <p>Sala!</p>
+                <TabPanel display="flex" width="100%" height="100%" alignItems="center" padding="10px 0 10px 0">
+                  <div className="container-grid">
+                    <div className="photo-grid">
+                      <div className="card-1">
+                        <img src="/img/living_room_shelf_1.webp" alt="example" />
+                      </div>
+                      <div className="card-5">
+                        <img src="/img/living_room_shelf_2.webp" alt="example" />
+                      </div>
+                    </div>
+                  </div>
                 </TabPanel>
-                <TabPanel>
-                  <p>Cozinha!</p>
+                <TabPanel display="flex" width="100%" height="100%" alignItems="center" padding="10px 0 10px 0">
+                  <div className="container-grid">
+                    <div className="photo-grid">
+                      <div className="card-1">
+                        <img src="/img/kitchen_cabinet_1.webp" alt="example" />
+                      </div>
+                      <div className="card-2">
+                        <img src="/img/kitchen_cabinet_2.webp" alt="example" />
+                      </div>
+                      <div className="card-3">
+                        <img src="/img/kitchen_cabinet_3.webp" alt="example" />
+                      </div>
+                      <div className="card-4">
+                        <img src="/img/kitchen_cabinet_4.webp" alt="example" />
+                      </div>
+                      <div className="card-5">
+                        <img src="/img/kitchen_cabinet_5.webp" alt="example" />
+                      </div>
+                      <div className="card-6">
+                        <img src="/img/kitchen_cabinet_2.webp" alt="example" />
+                      </div>
+                      <div className="card-7">
+                        <img src="/img/kitchen_cabinet_1.webp" alt="example" />
+                      </div>
+                      <div className="card-8">
+                        <img src="/img/kitchen_cabinet_3.webp" alt="example" />
+                      </div>
+                    </div>
+                  </div>
                 </TabPanel>
-                <TabPanel>
-                  <p>Banheiro!</p>
+                <TabPanel display="flex" width="100%" height="100%" alignItems="center" padding="10px 0 10px 0">
+                  <div className="container-grid">
+                    <div className="photo-grid">
+                      <div className="card-1">
+                        <img src="/img/bedroom_closet_1.webp" alt="example" />
+                      </div>
+                      <div className="card-4">
+                        <img src="/img/bathroom_cabinet.webp" alt="example" />
+                      </div>
+                    </div>
+                  </div>
                 </TabPanel>
-                <TabPanel>
-                  <p>Paineis - MDF!</p>
+                <TabPanel display="flex" width="100%" height="100%" alignItems="center" padding="10px 0 10px 0">
+                  <p>Em breve mais fotos</p>
                 </TabPanel>
-                <TabPanel>
-                  <p>Escritório!</p>
+                <TabPanel display="flex" width="100%" height="100%" alignItems="center" padding="10px 0 10px 0">
+                  <p>Em breve mais fotos</p>
                 </TabPanel>
               </TabPanels>
             </Tabs>
@@ -422,7 +455,7 @@ const Home: NextPage = () => {
               <Spinner color="#B18B5A" size="xl" />
             </div>
           ) : null
-        }          
+        }
       </Main>
     </>
   )
