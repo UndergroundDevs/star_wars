@@ -2,19 +2,18 @@ import { MouseEvent } from 'react'
 import { Instagram, FacebookSquare } from '@styled-icons/boxicons-logos'
 import { Telephone, Heart } from '@styled-icons/foundation'
 import { Map } from '@styled-icons/boxicons-solid'
+import { Gmail } from '@styled-icons/simple-icons';
 import { FooterComponent } from './styles'
 
-import Link from 'next/link'
 import Image from 'next/image'
 
 const Footer = () => {
-
   function onScroll(event: MouseEvent<HTMLAnchorElement>) {
     event.preventDefault()
     const section = event.currentTarget.getAttribute('href');
     if (!section)
       return;
-    
+
     const sectionElement = document.querySelector(section);
     if (!sectionElement)
       return;
@@ -41,9 +40,9 @@ const Footer = () => {
                   <h1>Menu</h1>
                 </li>
                 <li>
-                    <a href="#contact" onClick={onScroll}>
-                      Contato
-                    </a>
+                  <a href="#contact" onClick={onScroll}>
+                    Contato
+                  </a>
                 </li>
                 <li>
                   <a href="#portifolio" onClick={onScroll}>
@@ -87,7 +86,11 @@ const Footer = () => {
                 </li>
                 <li>
                   <Telephone size="20px" color="#898989" style={{ marginRight: '15px' }} />
-                  <a href="tel:61999702525">(61) 9 9970-2525</a>
+                  <a href="tel:613142-0839">61 3142-0839</a>
+                </li>
+                <li>
+                  <Gmail size="20px" color="#898989" style={{ marginRight: '15px' }} />
+                  <a href="mailto:nhousebrasil@gmail.com">61 3142-0839</a>
                 </li>
                 <li>
                   Coimbra e Lima LTDA
@@ -97,7 +100,7 @@ const Footer = () => {
           </nav>
           <div className="copyright">
             <p>
-              Copyright N House Planejados 2021  Feito com 
+              Copyright N House Planejados 2021  Feito com
               <Heart size="25px" color="#FF0000" style={{ margin: '0 15px' }} />
               pela &nbsp;
               <a href="http://www.undergrounds.rf.gd/" target="_blank" rel="noopener noreferrer">

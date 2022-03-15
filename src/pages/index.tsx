@@ -109,12 +109,11 @@ const Home: NextPage = () => {
           </div>
           <div className="content-buget">
             <h1>
-              Faça seu orçamento!
+              Quem somos?
             </h1>
             <p>
-              Agende agora mesmo uma visita,
-              sem qualquer compromisso,
-              para montarmos um orçamento.
+              Empresa no Distrito Federal, do ramo de móveis planejados com qualidade e acabamento
+              industrial.
             </p>
             <a href="#">
               Agendar visita
@@ -127,7 +126,7 @@ const Home: NextPage = () => {
               <div>
                 <Image
                   src="/trophy-1.webp"
-                  alt="Englosh 101 mentoria"
+                  alt="n-house"
                   layout="responsive"
                   width={40}
                   height={70}
@@ -142,7 +141,7 @@ const Home: NextPage = () => {
               <div>
                 <Image
                   src="/guarantee.webp"
-                  alt="Englosh 101 mentoria"
+                  alt="n-house"
                   layout="responsive"
                   width={40}
                   height={70}
@@ -157,7 +156,7 @@ const Home: NextPage = () => {
               <div>
                 <Image
                   src="/shipping.webp"
-                  alt="Englosh 101 mentoria"
+                  alt="n-house"
                   layout="responsive"
                   width={40}
                   height={70}
@@ -172,7 +171,7 @@ const Home: NextPage = () => {
               <div>
                 <Image
                   src="/customer-support.webp"
-                  alt="Englosh 101 mentoria"
+                  alt="n-house"
                   layout="responsive"
                   width={40}
                   height={70}
@@ -198,21 +197,19 @@ const Home: NextPage = () => {
               Móveis Planejados
             </h1>
             <p>
-              Nossos móveis planejados trazem inspiração e modernidade para o seu lar.
-              Além de serem produtos com um design elegante trazeremos a praticidade
-              para o seu dia a dia, já que  nossos móveis contribuem para o melhor
-              aproveitamento do seu espaço, já que todas as peças são sob medida.
+              Temos como objetivo: alcançar, prioritariamente, o sucesso de nossos clientes, na
+              realização de seus projetos.
             </p>
           </aside>
         </SectionPlannedFurniture>
         <SectionOurCreativeProcess>
           <div className="content-our-creative-process">
             <h1>Conheça nosso <br /> trabalho</h1>
-            <p>
+            {/* <p>
               Entenda como funcionar
               <br />
               nosso processo criativo!
-            </p>
+            </p> */}
             <a href="http://google.com" target="_blank" rel="noopener noreferrer">
               Toque aqui
             </a>
@@ -231,12 +228,12 @@ const Home: NextPage = () => {
                     height={20}
                   />
                 </div>
-                <span>
-                  Vamos tirar todas as medidas do seu imovel.
+                <span style={{ textAlign: 'center' }}>
+                  Móveis planejados em até 12X.
                   <br />
-                  <span>
+                  {/* <span>
                     Para isso basta agendar uma visita!
-                  </span>
+                  </span> */}
                 </span>
               </li>
               <li>
@@ -264,9 +261,8 @@ const Home: NextPage = () => {
                     height={60}
                   />
                 </div>
-                <span>
-                  Faremos a entrega em tempo recorde
-                  para que você não fique parado
+                <span style={{ textAlign: 'center' }}>
+                  Segurança e certeza na entrega. (ver contrato)
                 </span>
               </li>
               <li>
