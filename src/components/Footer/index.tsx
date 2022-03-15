@@ -90,7 +90,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Gmail size="20px" color="#898989" style={{ marginRight: '15px' }} />
-                  <a href="mailto:nhousebrasil@gmail.com">61 3142-0839</a>
+                  <a href="mailto:nhousebrasil@gmail.com">nhousebrasil@gmail.com</a>
                 </li>
                 <li>
                   Coimbra e Lima LTDA
